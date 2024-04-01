@@ -12,28 +12,35 @@ public class SoapController {
     @Autowired
     private SoapClient soapClient;
 
-    @GetMapping("/listAllContinents")
-    public ResponseEntity<?> listAllContinents(){
-        return ResponseEntity.ok(soapClient.getAllContinents());
+    @GetMapping("/cerrarAfiliacion/{ruc}")
+    public ResponseEntity<?> cerrarAfiliacion(@PathVariable String ruc){
+        return ResponseEntity.ok(soapClient.cerrarAfiliacionRuc(ruc));
     }
 
-    @GetMapping("/listAllCountries")
-    public ResponseEntity<?> listAllCountries(){
-        return ResponseEntity.ok(soapClient.getAllCountries());
-    }
+    //    @GetMapping("/getCurrencyByName/{code}")
+//    public ResponseEntity<?> getCurrencyByName(@PathVariable String code){
+//        return ResponseEntity.ok(soapClient.getCurrencyByName(code.toUpperCase()));
+//    }
+//
+//
+//    @GetMapping("/listAllContinents")
+//    public ResponseEntity<?> listAllContinents(){
+//        return ResponseEntity.ok(soapClient.getAllContinents());
+//    }
+//
+//    @GetMapping("/listAllCountries")
+//    public ResponseEntity<?> listAllCountries(){
+//        return ResponseEntity.ok(soapClient.getAllCountries());
+//    }
+//
+//    @GetMapping("/listCurrencyByName")
+//    public ResponseEntity<?> listAllCurrencies(){
+//        return ResponseEntity.ok(soapClient.getAllCurrenciesByName());
+//    }
+//
 
-    @GetMapping("/listCurrencyByName")
-    public ResponseEntity<?> listAllCurrencies(){
-        return ResponseEntity.ok(soapClient.getAllCurrenciesByName());
-    }
-
-    @GetMapping("/getCurrencyByName/{code}")
-    public ResponseEntity<?> getCurrencyByName(@PathVariable String code){
-        return ResponseEntity.ok(soapClient.getCurrencyByName(code.toUpperCase()));
-    }
-
-    @GetMapping("/findCountry/{code}")
-    public ResponseEntity<?> findCountry(@PathVariable String code){
-        return ResponseEntity.ok(soapClient.findCountry(code.toUpperCase()));
-    }
+//    @GetMapping("/findCountry/{code}")
+//    public ResponseEntity<?> findCountry(@PathVariable String code){
+//        return ResponseEntity.ok(soapClient.findCountry(code.toUpperCase()));
+//    }
 }

@@ -18,7 +18,7 @@ public class SoapConfig {
     @Bean
     public SoapClient getSoapClient(Jaxb2Marshaller marshaller){
         SoapClient soapClient = new SoapClient();
-        soapClient.setDefaultUri("http://www.dneonline.com/calculator.asmx");
+        soapClient.setDefaultUri("http://aplicacionesrv.df.local:365/Servicio.svc?WSDL");
         soapClient.setMarshaller(marshaller);
         soapClient.setUnmarshaller(marshaller);
         return soapClient;
